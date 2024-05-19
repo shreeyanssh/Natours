@@ -1,0 +1,99 @@
+.btn {
+  &:link,
+  &:visited {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+    font-size: $defaul-font-size;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 10px 20px rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 1px 5px 10px rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-gray-dark;
+
+    &::after {
+      background-color: white;
+    }
+  }
+
+  &--green {
+    background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.9),
+      rgba($color-primary-dark, 0.9)
+    );
+    color: $color-white;
+
+    &::after {
+      background-image: linear-gradient(
+        to right,
+        rgba($color-primary-light, 0.9),
+        rgba($color-primary-dark, 0.9)
+      );
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.4s ease-in 0.75s backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $defaul-font-size;
+    font-weight: 700;
+    color: $color-primary;
+    display: inline-block;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    transform: translateY(0);
+  }
+}
